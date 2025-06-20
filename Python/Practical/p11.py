@@ -64,7 +64,7 @@ age = int(input("Enter your age: "))
 
 product = input("Enter product: ")
 product_gram = int(input("Enter product gram: "))
-curr_gold_rate = 9607
+curr_gold_rate = 5752 
 
 total_rate = product_gram * curr_gold_rate
 
@@ -73,7 +73,7 @@ total_making_charges = product_gram * making_charges
 
 total_amount = total_rate + total_making_charges
 
-if gender == "male" or gender == "m" or gender == "M" or gender == "Male":
+if gender == "M" or gender == "Male":
     if age >= 65:
         if (total_amount >= 200000 and total_amount < 300000):
             discount = 20
@@ -94,7 +94,7 @@ if gender == "male" or gender == "m" or gender == "M" or gender == "Male":
             discount = 0
     else:
         discount = 0
-elif gender == "female" or gender == "f" or gender == "F" or gender == "Female":
+elif gender == "F" or gender == "Female":
     if age >= 65:
         if (total_amount >= 200000 and total_amount < 300000):
             discount = 25
@@ -116,12 +116,12 @@ elif gender == "female" or gender == "f" or gender == "F" or gender == "Female":
     else:
         discount = 0
 else:
-    print("Invalid input")
+    print("Invalid gender input. Please enter M/F or Male/Female.")
 
-print(f"Discount = {discount}%")
+print(f"DISCOUNT: {discount}%")
 
-discount_amt = (total_amount * discount) / 100
-print(f"Discount amount without the making charges = ₹{discount_amt}.")
+discount_amt = (total_rate * discount) / 100
+print(f"DISCOUNT AMOUNT (on gold only): ₹{discount_amt}")
 
 total_net_amount = total_amount - discount_amt
-print(f"Total net amount to be paid with discount = ₹{total_net_amount}.")
+print(f"TOTAL NET AMOUNT TO BE PAID: ₹{total_net_amount}")
